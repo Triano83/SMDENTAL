@@ -24,9 +24,9 @@ class Albaran extends Model
             ->withPivot('cantidad', 'precio_unitario', 'importe_total')
             ->withTimestamps();
     }
-        public function factura()
+        public function facturas()
     {
-        return $this->belongsToMany(Factura::class, 'factura_albaran')
+        return $this->belongsToMany(Factura::class, 'factura_albarans')
             ->withPivot('importe')
             ->withTimestamps();
     }

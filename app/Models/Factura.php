@@ -19,7 +19,7 @@ class Factura extends Model
     }
     public function albaranes()
     {
-        return $this->belongsToMany(Albaran::class, 'factura_albaran')
+        return $this->belongsToMany(Albaran::class, 'factura_albarans')
             ->withPivot('importe')
             ->withTimestamps();
     }
