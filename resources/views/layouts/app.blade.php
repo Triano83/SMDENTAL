@@ -38,8 +38,8 @@
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto"> {{-- ms-auto empuja los elementos a la derecha --}}
+            <div class="collapse navbar-collapse" id="navbarNav">               
+                <ul class="navbar-nav ms-auto">
                     <li class="nav-item mx-1">
                         <a class="btn btn-primary" href="{{ route('clientes.create') }}">Crear Clínica</a>
                     </li>
@@ -53,12 +53,17 @@
                         <a class="btn btn-info" href="{{ route('productos.index') }}">Listar Productos</a>
                     </li>
                     <li class="nav-item mx-1">
-                        <a class="btn btn-warning" href="{{ route('albaranes.index') }}">Listar Albaranes</a>
-                        {{-- La creación de albaranes será más compleja y la haremos después --}}
+                        <a class="btn btn-warning" href="{{ route('albaranes.create') }}">Crear Albarán</a> {{-- ¡Botón habilitado! --}}
                     </li>
                     <li class="nav-item mx-1">
-                        <a class="btn btn-danger" href="{{ route('facturas.index') }}">Listar Facturas</a>
+                        <a class="btn btn-danger" href="{{ route('albaranes.index') }}">Listar Albaranes</a>
+                    </li>
+                    <li class="nav-item mx-1">
+                        <a class="btn btn-dark" href="{{ route('facturas.create') }}">Crear Factura</a> {{-- ¡Botón habilitado! --}}
+                    </li>
+                    <li class="nav-item mx-1">
                         {{-- La creación de facturas será más compleja y la haremos después --}}
+                        <a class="btn btn-dark" href="{{ route('facturas.index') }}">Listar Facturas</a>
                     </li>
                     <li class="nav-item mx-1">
                         <form action="{{ url('facturas/generar-mensual') }}" method="POST" style="display:inline;">

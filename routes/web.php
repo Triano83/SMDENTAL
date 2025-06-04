@@ -23,9 +23,11 @@ Route::get('/productos/create', [ProductoController::class, 'createWeb'])->name(
 
 // Rutas para Albaranes (solo listado por ahora, creación más avanzada)
 Route::get('/albaranes', [AlbaranController::class, 'indexWeb'])->name('albaranes.index');
+Route::get('/albaranes/create', [AlbaranController::class, 'createWeb'])->name('albaranes.create'); // ¡Nueva ruta!
 
 // Rutas para Facturas (solo listado por ahora, creación más avanzada)
 Route::get('/facturas', [FacturaController::class, 'indexWeb'])->name('facturas.index');
+Route::get('/facturas/create', [FacturaController::class, 'createWeb'])->name('facturas.create'); // ¡Nueva ruta!
 
 
 // Rutas de API (tus apiResource existentes)

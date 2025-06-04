@@ -178,7 +178,10 @@ class AlbaranController extends Controller
     {
         return view('albaranes.index');
     }
-    // No agregamos 'createWeb' aquí todavía, ya que crear albaranes es más complejo.
 
+    public function createWeb() 
+    {
+        return view('albaranes.create');
+    }
 
 }

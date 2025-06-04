@@ -246,6 +246,9 @@ class FacturaController extends Controller
     {
         return view('facturas.index');
     }
-    // No agregamos 'createWeb' aquí todavía.
-
+    
+    public function createWeb() // ¡Nuevo método!
+    {
+        return view('facturas.create');
+    }
 }
