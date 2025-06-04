@@ -101,4 +101,16 @@ class ProductoController extends Controller
             return response()->json(['message' => 'Error al eliminar el producto: ' . $e->getMessage()], 500);
         }
     }
+
+    public function indexWeb()
+    {
+        return view('productos.index');
+    }
+
+
+    public function createWeb()
+    {
+        return view('productos.create');
+    }
+
 }

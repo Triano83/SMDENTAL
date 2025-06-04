@@ -117,4 +117,15 @@ class ClienteController extends Controller
             return response()->json(['message' => 'Error al eliminar el cliente: ' . $e->getMessage()], 500);
         }
     }
+    
+    public function indexWeb()
+    {
+        return view('clientes.index');
+    }
+
+
+    public function createWeb()
+    {
+        return view('clientes.create');
+    }
 }
