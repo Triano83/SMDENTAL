@@ -83,7 +83,6 @@ Sigue estos pasos para poner en marcha el proyecto en tu entorno local:
     git clone https://github.com/Triano83/SMDENTAL.git
     cd smdental
     ```
-    *(Asegúrate de cambiar `your-username/sm-dental` por la URL real de tu repositorio)*
 
 2.  **Instalar Dependencias de Composer**:
     ```bash
