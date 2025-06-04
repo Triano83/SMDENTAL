@@ -179,7 +179,7 @@ class AlbaranController extends Controller
         return view('albaranes.index');
     }
 
-    public function createWeb() 
+    public function createWeb()
     {
         return view('albaranes.create');
     }

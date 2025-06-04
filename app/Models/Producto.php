@@ -16,7 +16,7 @@ class Producto extends Model
 
     public function albaranes()
     {
-        return $this->belongsToMany(Albaran::class, 'albaran_producto')
+        return $this->belongsToMany(Albaran::class, 'albaran_productos')
             ->withPivot('cantidad', 'precio_unitario', 'importe_total')
             ->withTimestamps();
     }

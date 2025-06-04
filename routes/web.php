@@ -8,33 +8,34 @@ use Illuminate\Support\Facades\Route;
 
 
 
-// Rutas de Vistas
+// Rutas de Vistas (estas son las que sirven las páginas HTML)
 Route::get('/', function () {
     return view('welcome');
 });
 
-// Rutas para Clientes
 Route::get('/clientes', [ClienteController::class, 'indexWeb'])->name('clientes.index');
 Route::get('/clientes/create', [ClienteController::class, 'createWeb'])->name('clientes.create');
 
-// Rutas para Productos
 Route::get('/productos', [ProductoController::class, 'indexWeb'])->name('productos.index');
 Route::get('/productos/create', [ProductoController::class, 'createWeb'])->name('productos.create');
 
-// Rutas para Albaranes (solo listado por ahora, creación más avanzada)
 Route::get('/albaranes', [AlbaranController::class, 'indexWeb'])->name('albaranes.index');
-Route::get('/albaranes/create', [AlbaranController::class, 'createWeb'])->name('albaranes.create'); // ¡Nueva ruta!
+Route::get('/albaranes/create', [AlbaranController::class, 'createWeb'])->name('albaranes.create');
 
-// Rutas para Facturas (solo listado por ahora, creación más avanzada)
 Route::get('/facturas', [FacturaController::class, 'indexWeb'])->name('facturas.index');
-Route::get('/facturas/create', [FacturaController::class, 'createWeb'])->name('facturas.create'); // ¡Nueva ruta!
+Route::get('/facturas/create', [FacturaController::class, 'createWeb'])->name('facturas.create');
 
 
-// Rutas de API (tus apiResource existentes)
-Route::apiResource('clientes', ClienteController::class);
-Route::apiResource('productos', ProductoController::class);
-Route::apiResource('albaranes', AlbaranController::class);
-Route::apiResource('facturas', FacturaController::class);
+// --- RUTAS DE API ---
+// Estas rutas apiResource se agrupan bajo el prefijo 'api'.
+// Esto significa que responderán a URLs como /api/clientes, /api/productos, etc.
+Route::prefix('api')->group(function () {
+    Route::apiResource('clientes', ClienteController::class);
+    Route::apiResource('productos', ProductoController::class);
+    Route::apiResource('albaranes', AlbaranController::class);
+    Route::apiResource('facturas', FacturaController::class);
+});
 
-// Ruta para generar facturas mensuales (POST, ya la tenías)
+// Ruta personalizada para generar facturas mensuales (sigue siendo una ruta web POST)
+// No la metemos en el grupo 'api' porque el botón de la navbar ya apunta a '/facturas/generar-mensual'
 Route::post('facturas/generar-mensual', [FacturaController::class, 'generarFacturasMensuales']);
