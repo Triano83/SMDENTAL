@@ -80,8 +80,8 @@ Sigue estos pasos para poner en marcha el proyecto en tu entorno local:
 
 1.  **Clonar el Repositorio**:
     ```bash
-    git clone [https://github.com/your-username/sm-dental.git](https://github.com/your-username/sm-dental.git)
-    cd sm-dental
+    git clone https://github.com/Triano83/SMDENTAL.git
+    cd smdental
     ```
     *(Asegúrate de cambiar `your-username/sm-dental` por la URL real de tu repositorio)*
 
